@@ -1,23 +1,43 @@
 "use client";
+import Image from "next/image";
+import Contributions from "@/components/Contributions";
 
-import { profile } from "../data/profile";
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className="px-8 py-20 min-h-screen">
-      <section className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6 text-[var(--text)]">
-          Hi, I'm Excalibur
+    <main className="relative px-8 py-20">
+
+      {/* Profil Fotoğrafı */}
+      <div className="absolute top-10 right-10">
+        <Image
+          src="/profile.jpeg"
+          alt="Profile photo"
+          width={480}
+          height={480}
+          className="rounded-xl border border-gray-300 dark:border-gray-600 shadow-md"
+        />
+      </div>
+
+      {/* İçerik */}
+      <section>
+        <h1 className="text-4xl font-bold mb-4">
+          Hi, I'm <span className="text-blue-600">Eralp</span>
         </h1>
 
-        <p className="text-[var(--text-muted)] text-lg max-w-2xl leading-relaxed mb-6">
-          I build modern web applications using Next.js, TypeScript, Tailwind CSS and more.
-        </p>
-
-        <p className="text-[var(--text-muted)] text-lg max-w-2xl leading-relaxed">
-          Check out my projects or get in touch if you want to collaborate.
+        <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl">
+          Software Developer — building modern solutions with Next.js & FastAPI.
         </p>
       </section>
+
+      <a
+        href="/CV.pdf"
+        download
+        className="inline-block mt-6 px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700"
+      >
+        Download CV
+      </a>
+
+      <Contributions />
+
     </main>
   );
 }
