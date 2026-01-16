@@ -58,7 +58,26 @@ body {
   }
 }
 
-html, body {
+
+html,
+body {
   overflow-x: hidden;
 }
 
+@utility custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 20px;
+  }
+}
